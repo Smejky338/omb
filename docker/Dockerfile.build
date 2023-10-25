@@ -13,7 +13,7 @@
 #
 
 # Build the Project
-FROM maven:latest as build
+FROM maven:3.8.8 as build
 COPY . /benchmark
 WORKDIR /benchmark
 RUN mvn install
