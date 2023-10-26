@@ -18,6 +18,7 @@ ARG BENCHMARK_TARBALL
 
 ADD ${BENCHMARK_TARBALL} /
 
-RUN mv openmessaging-benchmark-* /benchmark
+#RUN mv openmessaging-benchmark-* /benchmark
+RUN mv . /benchmark
 
 WORKDIR /benchmark
