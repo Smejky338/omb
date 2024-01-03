@@ -14,6 +14,10 @@
 
 FROM openjdk:8-jdk
 
+# Install package manager and vim
+RUN apt-get update && \
+    apt-get install -y vim nano
+
 ARG BENCHMARK_TARBALL
 
 ADD ${BENCHMARK_TARBALL} /
