@@ -19,4 +19,30 @@ To tear down the chart:
 ```bash
 $ helm delete benchmark --purge
 ```
+## Perfscale use on MSK Kafka
 
+### Install
+
+```
+oc new-project cpt-benchmark-msk
+helm install benchmark-omb deployment/kubernetes/helm/benchmark -n cpt-benchmark-msk
+```
+
+### Use
+
+From the shell of driver:
+
+```bash
+bin/benchmark --drivers driver-kafka/kafka-throughput.yaml --workers $WORKERS workloads/1-topic-16-partitions-1kb.yaml
+benchmark-omb-worker.cpt-benchmark-msk.svc.cluster.local
+
+bin/benchmark --drivers driver-kafka/kafka-big-batches-gzip.yaml --workers $WORKERS workloads/1-topic-16-partitions-1kb.yaml
+benchmark-omb-worker.cpt-benchmark-msk.svc.cluster.local
+```
+
+bin/benchmark --drivers driver-kafka/kafka.yaml --workers $WORKERS workloads/1-topic-16-partitions-1kb.yaml
+
+### Delete
+```
+helm delete benchmark-omb
+```
