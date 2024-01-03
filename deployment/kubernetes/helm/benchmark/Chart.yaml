@@ -18,6 +18,6 @@ description: A Helm chart for running the Open Messaging Benchmark in Kubernetes
 name: openmessaging-benchmark
 version: 0.0.1
 sources:
-  - https://github.com/openmessaging/openmessaging-benchmark
+  - https://github.com/Smejky338/omb
 maintainers:
   - name: Jerry Peng
